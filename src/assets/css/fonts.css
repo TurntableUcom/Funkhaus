@@ -1,0 +1,15 @@
+@font-face {
+   font-family: 'GTSuper-Medium';
+   src: url('/assets/fonts/GT-Super/GT-Super-Display-Medium.eot');
+   src: url('/assets/fonts/GT-Super/GT-Super-Display-Medium.woff2') format('woff2'),
+        url('/assets/fonts/GT-Super/GT-Super-Display-Medium.woff') format('woff'),
+        url('/assets/fonts/GT-Super/GT-Super-Display-Medium.ttf') format('truetype')
+ }
+
+ @font-face {
+   font-family: 'FranklinGothic';
+   src: url('/assets/fonts/ITC-Franklin-Gothic-Std/ITC-Franklin-Gothic-Std-Book/ITCFranklinGothicStd-Book.eot');
+   src: url('/assets./fonts/ITC-Franklin-Gothic-Std/ITC-Franklin-Gothic-Std-Book/ITCFranklinGothicStd-Book.woff2') format('woff2'),
+        url('/assets/fonts/ITC-Franklin-Gothic-Std/ITC-Franklin-Gothic-Std-Book/ITCFranklinGothicStd-Book.woff') format('woff'),
+        url('/assets/fonts/ITC-Franklin-Gothic-Std/ITC-Franklin-Gothic-Std-Book/ITCFranklinGothicStd-Book.svg#FranklinGothic') format('svg')
+ }
