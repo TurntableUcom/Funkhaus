@@ -19,7 +19,8 @@
       'app-footer': Footer
     },
     watch: {
-      '$route' () {
+      '$route'(to, from) {
+        this.$store.dispatch('isHomepage')
         $('body').removeClass('nav-wrap-is-visible')
       }
     }

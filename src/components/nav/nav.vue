@@ -41,13 +41,30 @@ export default {
     },
     logout() {
       this.$store.dispatch('logout')
+    },
+    disableLogoLinkTest(){
+      this.isHomepage ? $('header .header-logo').css('cursor','text') : $('header .header-logo').css('cursor','pointer')
     }
   },
   computed: {
     isAdmin() {
       return this.$store.getters.loggedInAsAdmin
+    },
+    isHomepage() {
+      return this.$store.getters.isHomepage
     }
-  }
+  },
+  created (){
+    this.$store.dispatch('isHomepage')
+  },
+  mounted() {
+      this.disableLogoLinkTest()
+  },
+  watch:{
+    $route (to, from){
+      this.disableLogoLinkTest()
+    }
+  } 
 }
 </script>
 

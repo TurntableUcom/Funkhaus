@@ -11,6 +11,7 @@ export default new Vuex.Store({
   state: {
     activeVideo: null,
     isAdmin: false,
+    isHomepage: false,
     errorMessage: '',
     successMessage: ''
   },
@@ -36,6 +37,9 @@ export default new Vuex.Store({
     clearUser (state) {
       state.user = null
       state.isAdmin = false
+    },
+    setIsHomepage(state, bool) {
+      state.isHomepage = bool
     }
   },
   actions: {
@@ -184,6 +188,19 @@ export default new Vuex.Store({
     },
     setSuccessMessage ({commit}, msg) {
       commit('setSuccessMessage', msg)
+    },
+    isHomepage({commit}) {
+      const path = window.location.pathname
+      const Filename = path.split('/').pop()
+      if (path.split('/').length >= 3) {
+        commit('setIsHomepage', false)
+      } else {
+        if (Filename != '' && Filename != 'index.html') {
+          commit('setIsHomepage', false)
+        } else {
+          commit('setIsHomepage', true)
+        }
+      }
     }
   },
   getters: {
@@ -192,6 +209,9 @@ export default new Vuex.Store({
     },
     isAuthenticated (state) {
       return state.user !== null
+    },
+    isHomepage (state) {
+        return state.isHomepage
     },
     loggedInAsAdmin (state) {
       return state.isAdmin
